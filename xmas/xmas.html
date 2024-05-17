@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+
+        .buttons{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 200px 50px;
+        }
+
+      button{
+        border: none;
+        cursor: pointer;
+        appearance: none;
+        background-color: inherit;
+        transition: transform .7s ease-in-out;
+        margin-left:10px;
+        display: inline-block;
+        padding: 50px 100px;
+
+      }
+      button:hover{
+        box-shadow: 0 12px 16px 0 rgba(128, 231, 160, 0.24),0 17px 50px 0 rgba(94, 226, 158, 0.19);
+      }
+      img{
+        width: 210px;
+        height: 210px;
+      }
+
+.mompopup .mompopuptext{
+  visibility: hidden;
+  width: 150px;
+  background-color: rgb(147, 241, 152);
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+.dadpopup .dadpopuptext{
+  visibility: hidden;
+  width: 150px;
+  background-color: rgb(147, 241, 152);
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.mompopup:hover .mompopuptext {
+  visibility: visible;
+}
+.dadpopup:hover .dadpopuptext{
+  visibility: visible;
+}
+.inputpopup .inputpopuptext {
+    visibility: hidden;
+  width: 150px;
+  background-color: rgb(147, 241, 152);
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  margin-left: 640px; 
+  margin-top: 10px;
+
+  z-index: 1;    
+}
+.inputpopup:hover .inputpopuptext {
+    visibility: visible;
+    display: block;
+
+}
+.hm {
+    display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+}
+.label {
+    display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+.input {
+    display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+}
+.ltpic{
+    background-image: url("https://lh3.googleusercontent.com/p/AF1QipN6WsxZCGicPSLL3PxDNOszJSVT_EjxbvfIoNK4=s1360-w1360-h1020");
+    background-color: #cccccc; /* Used if the image is unavailable */
+  height: 1200px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+}
+.umipic{
+    background-image: url("https://cdn.canada247.info/assets/uploads/59bbc9bf12a1206e7bb90e0f2573028b_-manitoba-winnipeg-linden-woods-umi-sushi-204-489-3118html.jpg");
+    background-color: #cccccc; /* Used if the image is unavailable */
+  height: 1200px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+}
+    </style>
+  </head>
+  <body>
+<div class = "buttons" id="buttons">
+    <div class = "mompopup">
+     <button type = "submit" class = "mombutton" onclick="startMom()"> 
+    <img src="https://st.depositphotos.com/1098692/1485/i/450/depositphotos_14850833-stock-photo-red-gift-box.jpg" alt ="mombuttonjpg" border="0"/>
+    <span class="mompopuptext">To: Mom From: Sara</span>
+</button>
+</div>
+
+<div class = "dadpopup" >
+     <button type = "submit" class = "dadbutton" onclick="startDad()"> 
+    <img src="https://images.freeimages.com/images/large-previews/d36/present-1443957.jpg?fmt=webp&w=500" alt ="dadbuttonjpg" border="0"/>
+    <span class="dadpopuptext">To: Dad From: Sara</span>
+</button>
+</div>
+</div>
+<div id="hmscreen" onkeyup="onKeyUp(event)">
+<div class = "hm">
+<div hidden="hidden" class = "hm1" id = "hm1" >
+<img src="/Users/sarataylor/Desktop/xmas/hm1.png" alt = "hm1" border="0"/>
+</div>
+<div hidden="hidden" class = "hm2" id = "hm2" >
+    <img src="/Users/sarataylor/Desktop/xmas/hm2.png" alt = "hm2" border="0"/>
+</div>
+ <div hidden="hidden" class = "hm3" id = "hm3" >
+     <img src="/Users/sarataylor/Desktop/xmas/hm3.png" alt = "hm3" border="0"/>
+ </div>
+ <div hidden="hidden" class = "hm4" id = "hm4" >
+    <img src="/Users/sarataylor/Desktop/xmas/hm4.png" alt = "hm4" border="0"/>
+ </div>
+ <div hidden="hidden" class = "hm5" id = "hm5" >
+    <img src="/Users/sarataylor/Desktop/xmas/hm5.png" alt = "hm5" border="0"/>
+    </div>
+    <div hidden="hidden" class = "hm6" id = "hm6" >
+        <img src="/Users/sarataylor/Desktop/xmas/hm6.png" alt = "hm6" border="0"/>
+    </div>  
+    <div hidden="hidden" class = "hm7" id = "hm7" >
+        <img src="/Users/sarataylor/Desktop/xmas/hm7.png" alt = "hm7" border="0"/>
+     </div>
+     <div hidden="hidden" class = "hm8" id = "hm8" >
+        <img src="/Users/sarataylor/Desktop/xmas/hm8.png" alt = "hm8" border="0"/>
+        </div>
+    </div>
+<div hidden="hidden" class = "words" id = "words" style="text-align:center">
+    <h2 id="screenwordone"> </h2> <h2 id="screenwordtwo"> </h2>  <h2 id="screenwordthree"> </h2>
+</div>
+<div class="inputpopup">
+<input class="input" id="input" type="text" onkeypress="onKeyUp()" placeholder="Enter a letter here">
+<span class="inputpopuptext">Only enter letters, do not press delete so you can keep track of your guesses.</span>
+</div>
+</div>
+<div hidden="hidden" class = "ltpic" id = "ltpic" >
+</div>
+<div hidden="hidden" class = "umipic" id ="umipic"></div>
+<script>
+     wordone = "";
+     wordtwo = "";
+     wordthree = "";
+     shownwordone = "";
+     shownwordtwo = "";
+     shownwordthree = "";
+     let end = false;
+        numWrong = 0;
+    let mom = false;
+    let dad = false;
+    function startMom(){
+        
+        mom = true;
+        document.getElementById("buttons").style.display = "none";
+        document.getElementById("hm1").removeAttribute("hidden");
+        document.getElementById("words").removeAttribute("hidden");
+
+        wordone="c a f e";
+        wordtwo="l e m o n";
+        wordthree="t r e e";
+
+        shownwordone="_ _ _ _";
+        shownwordtwo="_ _ _ _ _";
+        shownwordthree="_ _ _ _";
+
+        document.getElementById("screenwordone").innerHTML = shownwordone;
+        document.getElementById("screenwordtwo").innerHTML = shownwordtwo;
+        document.getElementById("screenwordthree").innerHTML = shownwordthree;
+        setTimeout(momAlert,1000);
+    }
+
+    function momAlert(){
+        alert("Guess the name of place we talked about......");
+    }
+
+    function onKeyUp(event) {
+            let key = event.key;
+            if(mom == true) {
+            let inOne = wordone.includes(key);
+            let inTwo = wordtwo.includes(key);
+            let inThree = wordthree.includes(key);
+            if(key === 'a') {
+          shownwordone = setCharAt(shownwordone,2,'a');
+         document.getElementById("screenwordone").innerHTML = shownwordone;
+        }
+        if(key === 'c') {
+          shownwordone = setCharAt(shownwordone,0,'c');
+         document.getElementById("screenwordone").innerHTML = shownwordone;
+        }
+        if(key === 'f') {
+          shownwordone = setCharAt(shownwordone,4,'f');
+         document.getElementById("screenwordone").innerHTML = shownwordone;
+        }
+        if(key === 'e') {
+          shownwordone = setCharAt(shownwordone,6,'e');
+          shownwordtwo = setCharAt(shownwordtwo,2,'e');
+          shownwordthree = setCharAt(shownwordthree,4,'e');
+          shownwordthree = setCharAt(shownwordthree,6,'e');
+         document.getElementById("screenwordone").innerHTML = shownwordone;
+         document.getElementById("screenwordtwo").innerHTML = shownwordtwo;
+         document.getElementById("screenwordthree").innerHTML = shownwordthree;
+
+        }
+        if(key === 'l') {
+          shownwordtwo = setCharAt(shownwordtwo,0,'l');
+         document.getElementById("screenwordtwo").innerHTML = shownwordtwo;
+        }
+        if(key === 'm') {
+          shownwordtwo = setCharAt(shownwordtwo,4,'m');
+         document.getElementById("screenwordtwo").innerHTML = shownwordtwo;
+        }
+        if(key === 'o') {
+          shownwordtwo = setCharAt(shownwordtwo,6,'o');
+         document.getElementById("screenwordtwo").innerHTML = shownwordtwo;
+        }
+        if(key === 'n') {
+          shownwordtwo = setCharAt(shownwordtwo,8,'n');
+         document.getElementById("screenwordtwo").innerHTML = shownwordtwo;
+        }
+        if(key === 't') {
+          shownwordthree = setCharAt(shownwordthree,0,'t');
+         document.getElementById("screenwordthree").innerHTML = shownwordthree;
+        }
+        if(key === 'r') {
+          shownwordthree = setCharAt(shownwordthree,2,'r');
+         document.getElementById("screenwordthree").innerHTML = shownwordthree;
+        }
+        else if(numWrong == 0 && !inOne && !inTwo && !inThree) {
+            numWrong = 1;
+            document.getElementById("hm1").style.display = "none";
+         document.getElementById("hm2").removeAttribute("hidden");
+        }
+        else if(numWrong == 1 && !inOne && !inTwo && !inThree) {
+            numWrong = 2;
+            document.getElementById("hm2").style.display = "none";
+         document.getElementById("hm3").removeAttribute("hidden");
+        }
+        else if(numWrong == 2 && !inOne && !inTwo && !inThree) {
+            numWrong = 3;
+            document.getElementById("hm3").style.display = "none";
+         document.getElementById("hm4").removeAttribute("hidden");
+        }
+        else if(numWrong == 3 && !inOne && !inTwo && !inThree) {
+            numWrong = 4;
+            document.getElementById("hm4").style.display = "none";
+         document.getElementById("hm5").removeAttribute("hidden");
+        }
+        else if(numWrong == 4 && !inOne && !inTwo && !inThree) {
+            numWrong = 5;
+            document.getElementById("hm5").style.display = "none";
+         document.getElementById("hm6").removeAttribute("hidden");
+        }
+        else if(numWrong == 5 && !inOne && !inTwo && !inThree) {
+            numWrong = 6;
+            document.getElementById("hm6").style.display = "none";
+         document.getElementById("hm7").removeAttribute("hidden");
+        }
+        else if(numWrong == 6 && !inOne && !inTwo && !inThree) {
+            numWrong = 7;
+            document.getElementById("hm7").style.display = "none";
+         document.getElementById("hm8").removeAttribute("hidden");
+         alert("Game Over");
+         document.getElementById("input").setAttribute("disabled", true);
+        }
+        if(shownwordone === wordone && shownwordtwo === wordtwo && shownwordthree === wordthree) {
+            alert("Win");
+            document.getElementById("hmscreen").style.display = "none";
+        document.getElementById("ltpic").removeAttribute("hidden");
+        }
+    }
+    if(dad == true) {
+        let inOne = wordone.includes(key);
+        let inTwo = wordtwo.includes(key);  
+
+        if(key === 'u') {
+          shownwordone = setCharAt(shownwordone,0,'u');
+          shownwordtwo = setCharAt(shownwordtwo,2,'u');
+         document.getElementById("screenwordone").innerHTML = shownwordone;
+         document.getElementById("screenwordtwo").innerHTML = shownwordtwo;
+        }
+        if(key === 'm') {
+          shownwordone = setCharAt(shownwordone,2,'m');
+         document.getElementById("screenwordone").innerHTML = shownwordone;
+        }
+        if(key === 'i') {
+          shownwordone = setCharAt(shownwordone,4,'i');
+          shownwordtwo = setCharAt(shownwordtwo,8,'i');
+         document.getElementById("screenwordone").innerHTML = shownwordone;
+         document.getElementById("screenwordtwo").innerHTML = shownwordtwo;
+        }
+        if(key === 's') {
+          shownwordtwo = setCharAt(shownwordtwo,0,'s');
+          shownwordtwo = setCharAt(shownwordtwo,4,'s');
+         document.getElementById("screenwordtwo").innerHTML = shownwordtwo;
+        }
+        if(key === 'h') {
+            shownwordtwo = setCharAt(shownwordtwo,6,'h');
+            document.getElementById("screenwordtwo").innerHTML = shownwordtwo;
+        }
+        else if(numWrong == 0 && !inOne && !inTwo) {
+            numWrong = 1;
+            document.getElementById("hm1").style.display = "none";
+         document.getElementById("hm2").removeAttribute("hidden");
+        }
+        else if(numWrong == 1 && !inOne && !inTwo) {
+            numWrong = 2;
+            document.getElementById("hm2").style.display = "none";
+         document.getElementById("hm3").removeAttribute("hidden");
+        }
+        else if(numWrong == 2 && !inOne && !inTwo) {
+            numWrong = 3;
+            document.getElementById("hm3").style.display = "none";
+         document.getElementById("hm4").removeAttribute("hidden");
+        }
+        else if(numWrong == 3 && !inOne && !inTwo) {
+            numWrong = 4;
+            document.getElementById("hm4").style.display = "none";
+         document.getElementById("hm5").removeAttribute("hidden");
+        }
+        else if(numWrong == 4 && !inOne && !inTwo) {
+            numWrong = 5;
+            document.getElementById("hm5").style.display = "none";
+         document.getElementById("hm6").removeAttribute("hidden");
+        }
+        else if(numWrong == 5 && !inOne && !inTwo) {
+            numWrong = 6;
+            document.getElementById("hm6").style.display = "none";
+         document.getElementById("hm7").removeAttribute("hidden");
+        }
+        else if(numWrong == 6 && !inOne && !inTwo) {
+            numWrong = 7;
+            document.getElementById("hm7").style.display = "none";
+         document.getElementById("hm8").removeAttribute("hidden");
+         alert("Game Over");
+         document.getElementById("input").setAttribute("disabled", true);
+        }
+        if(shownwordone === wordone && shownwordtwo === wordtwo) {
+            alert("Win");
+            document.getElementById("hmscreen").style.display = "none";
+        document.getElementById("umipic").removeAttribute("hidden");
+        }
+    }
+
+
+    }
+    function setCharAt(str,index,chr) {
+    if(index > str.length-1) return str;
+    return str.substring(0,index) + chr + str.substring(index+1);
+}
+</script>
+<script>
+    function startDad(){
+        dad = true;
+
+        document.getElementById("buttons").style.display = "none";
+        document.getElementById("hm1").removeAttribute("hidden");
+        document.getElementById("words").removeAttribute("hidden");
+
+        wordone="u m i"
+        wordtwo="s u s h i"
+
+        shownwordone="_ _ _"
+        shownwordtwo="_ _ _ _ _"
+
+        document.getElementById("screenwordone").innerHTML = shownwordone
+        document.getElementById("screenwordtwo").innerHTML = shownwordtwo
+        setTimeout(dadAlert,1000);
+    }
+    function dadAlert(){
+        alert("Guess a Restaurant")
+    }
+</script>
+</body>
+</html>
